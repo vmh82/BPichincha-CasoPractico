@@ -31,7 +31,7 @@ namespace DebitoCredito.Infraestructure.Test.Integracion
         /// <param name="identificacion">identificacion de cliente a verificar</param>
         /// <returns></returns>
        [Theory]
-       [InlineData("01/01/2022", "07/07/2022", "1541826")]
+       [InlineData("01/01/2022", "07/07/2022", "1724389746")]
         public async Task VerificarEndPointEstadoDeCuentaMovimientos(DateTime fechaInicio, DateTime fechaFin, string identificacion)
         {
             var response = await _httpClient.GetAsync($"api/movimiento/reporte/?fechaInicio={fechaInicio}&fechaFin={fechaFin}&identificacion={identificacion}");

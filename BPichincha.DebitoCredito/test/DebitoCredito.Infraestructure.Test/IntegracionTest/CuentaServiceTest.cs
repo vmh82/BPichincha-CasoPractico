@@ -28,12 +28,12 @@ namespace DebitoCredito.Infraestructure.Test.IntegracionTest
         [InlineData("496825")]
         public async Task VerificarEndPointCuentaCliente(string numeroCuenta)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/cuenta/consultar/?identificacion={numeroCuenta}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/cuenta/consultar/?numeroCuenta={numeroCuenta}");
             string stringResult = await response.Content.ReadAsStringAsync();
             Assert.NotNull(stringResult);
             Response<CuentaDto> cuentaDto = JsonConvert.DeserializeObject<Response<CuentaDto>>(stringResult);
             Assert.NotNull(cuentaDto.Mensaje.Identificacion);
-            Assert.Contains(cuentaDto.Mensaje.Identificacion, "17181920");
+            Assert.Contains(cuentaDto.Mensaje.Identificacion, "1724389746");
         }
     }
 }
