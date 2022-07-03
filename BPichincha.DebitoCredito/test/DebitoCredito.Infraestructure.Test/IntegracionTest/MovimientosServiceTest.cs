@@ -11,6 +11,9 @@ using Xunit;
 
 namespace DebitoCredito.Infraestructure.Test.Integracion
 {
+    /// <summary>
+    /// Clase para verificar endpoints de integracion movimientos
+    /// </summary>
     public class MovimientosServiceTest 
     {
         private HttpClient _httpClient;
@@ -20,6 +23,13 @@ namespace DebitoCredito.Infraestructure.Test.Integracion
             _httpClient = webAppFactory.CreateDefaultClient();
         }
 
+        /// <summary>
+        /// Permite verificar consultar el estado de cuenta de un cliente, asociado al endpoint de movimientos
+        /// </summary>
+        /// <param name="fechaInicio">fecha inicio</param>
+        /// <param name="fechaFin">fecha de fin</param>
+        /// <param name="identificacion">identificacion de cliente a verificar</param>
+        /// <returns></returns>
        [Theory]
        [InlineData("01/01/2022", "07/07/2022", "1541826")]
         public async Task VerificarEndPointEstadoDeCuentaMovimientos(DateTime fechaInicio, DateTime fechaFin, string identificacion)

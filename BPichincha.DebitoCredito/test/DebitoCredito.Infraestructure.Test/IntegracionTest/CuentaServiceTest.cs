@@ -8,6 +8,9 @@ using Xunit;
 
 namespace DebitoCredito.Infraestructure.Test.IntegracionTest
 {
+    /// <summary>
+    /// Clase para verificar endpoints de integracion cuenta
+    /// </summary>
     public  class CuentaServiceTest
     {
         private HttpClient _httpClient;
@@ -16,7 +19,11 @@ namespace DebitoCredito.Infraestructure.Test.IntegracionTest
             var webAppFactory = new WebApplicationFactory<Program>();
             _httpClient = webAppFactory.CreateDefaultClient();
         }
-
+        /// <summary>
+        /// Permite realizar la verificacion del end point de consulta de una cuenta
+        /// </summary>
+        /// <param name="numeroCuenta">numero de cuenta</param>
+        /// <returns></returns>
         [Theory]
         [InlineData("496825")]
         public async Task VerificarEndPointCuentaCliente(string numeroCuenta)
