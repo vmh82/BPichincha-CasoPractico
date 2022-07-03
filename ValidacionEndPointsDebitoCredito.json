@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "ffc08fc3-6814-498d-8de2-b55e98ceece1",
+		"name": "DebitoCredito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ConsultarCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Cliente/Consultar/?Identificacion=1725394786",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cliente",
+						"Consultar",
+						""
+					],
+					"query": [
+						{
+							"key": "Identificacion",
+							"value": "1725394786"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Marianela Montalvo\",\r\n  \"genero\": \"Femenino\",\r\n  \"edad\": \"31\",\r\n  \"direccion\": \"Amazonas y NNUU\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"telefono\": \"097548965\",\r\n  \"contrasena\": \"5678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Cliente/Crear/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cliente",
+						"Crear",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarCliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Cliente/Eliminar/?identificacion=1725394786",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cliente",
+						"Eliminar",
+						""
+					],
+					"query": [
+						{
+							"key": "identificacion",
+							"value": "1725394786"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCuenta\": 4787588,\r\n  \"tipo\": \"Credito\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"saldoInicial\": 2000,\r\n  \"montoDiario\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Cuenta/Crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cuenta",
+						"Crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarCuenta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Cuenta/Eliminar/?numeroCuenta=38969",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cuenta",
+						"Eliminar",
+						""
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "38969"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarCuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Cuenta/Consultar/?numeroCuenta=4787588",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cuenta",
+						"Consultar",
+						""
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "4787588"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RealizarMovientos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCuenta\": 4787588,\r\n  \"monto\": -250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Movimiento/Crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Movimiento",
+						"Crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReporteMovimiento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Movimiento/Reporte/?fechaInicio=01/01/2022&fechaFin=07/25/2022&identificacion=1724389746",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Movimiento",
+						"Reporte",
+						""
+					],
+					"query": [
+						{
+							"key": "fechaInicio",
+							"value": "01/01/2022"
+						},
+						{
+							"key": "fechaFin",
+							"value": "07/25/2022"
+						},
+						{
+							"key": "identificacion",
+							"value": "1724389746"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarMovimiento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Movimiento/Eliminar/?numeroCuenta=4787588",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Movimiento",
+						"Eliminar",
+						""
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "4787588"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarCliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Jose Lema\",\r\n  \"genero\": \"Masculino\",\r\n  \"edad\": \"29\",\r\n  \"direccion\": \"San Juan\",\r\n  \"identificacion\": \"1725394786\",\r\n  \"telefono\": \"3030668\",\r\n  \"contrasena\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Cliente/Actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cliente",
+						"Actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarCuenta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCuenta\": 4787588,\r\n  \"tipo\": \"Credito\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"saldoInicial\": 1200,\r\n  \"montoDiario\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Cuenta/Actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Cuenta",
+						"Actualizar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
