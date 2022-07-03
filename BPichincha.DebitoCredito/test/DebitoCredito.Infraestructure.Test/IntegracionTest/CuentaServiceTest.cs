@@ -26,10 +26,10 @@ namespace DebitoCredito.Infraestructure.Test.IntegracionTest
         /// </summary>
         /// <returns></returns>
         [Fact]
-        public async Task VerificarEndPointCreacionCliente()
+        public async Task VerificarEndPointCreacionCuenta()
         {
             CuentaDto cuenta = new CuentaDto();
-            cuenta.NumeroCuenta = 225487;
+            cuenta.NumeroCuenta = 495878;
             cuenta.Tipo = "Corriente";
             cuenta.Identificacion = "1724389745";
             cuenta.SaldoInicial = 100;

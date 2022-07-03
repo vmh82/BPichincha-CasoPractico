@@ -41,7 +41,7 @@ namespace DebitoCredito.Infraestructure.Test.Integracion
             Assert.NotNull(stringResult);
             Response<List<DetalleMovimientoDto>> movimiento = JsonConvert.DeserializeObject<Response<List<DetalleMovimientoDto>>>(stringResult);
             Assert.NotNull(movimiento.Mensaje);
-            Assert.Contains(movimiento.Mensaje.First().Movimiento, "Deposito de 150");
+            Assert.Contains(movimiento.Mensaje.First().Movimiento, "Deposito de 150.00");
         }
 
         /// <summary>
