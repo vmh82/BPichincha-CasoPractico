@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -24,14 +25,34 @@ namespace DebitoCredito.Infraestructure.Test.Integracion
         }
 
         /// <summary>
+        /// Permite realizar la verificacion del end point de movimiento de credito
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public async Task VerificarEndPointDebito()
+        {
+            MovimientosDto movimientos = new MovimientosDto();
+            movimientos.NumeroCuenta = 225487;
+            movimientos.Monto = 150;
+            string jsonCliente = JsonConvert.SerializeObject(movimientos);
+            StringContent httpContent = new StringContent(jsonCliente, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await _httpClient.PostAsync($"api/movimiento/crear/", httpContent);
+            string stringResult = await response.Content.ReadAsStringAsync();
+            Assert.NotNull(stringResult);
+            Response<List<DetalleMovimientoDto>> movimiento = JsonConvert.DeserializeObject<Response<List<DetalleMovimientoDto>>>(stringResult);
+            Assert.NotNull(movimiento.Mensaje);
+            Assert.Contains(movimiento.Mensaje.First().Movimiento, "Deposito de 150");
+        }
+
+        /// <summary>
         /// Permite verificar consultar el estado de cuenta de un cliente, asociado al endpoint de movimientos
         /// </summary>
         /// <param name="fechaInicio">fecha inicio</param>
         /// <param name="fechaFin">fecha de fin</param>
         /// <param name="identificacion">identificacion de cliente a verificar</param>
         /// <returns></returns>
-       [Theory]
-       [InlineData("01/01/2022", "07/07/2022", "1724389746")]
+        [Theory]
+       [InlineData("01/01/2022", "07/07/2022", "1724389745")]
         public async Task VerificarEndPointEstadoDeCuentaMovimientos(DateTime fechaInicio, DateTime fechaFin, string identificacion)
         {
             var response = await _httpClient.GetAsync($"api/movimiento/reporte/?fechaInicio={fechaInicio}&fechaFin={fechaFin}&identificacion={identificacion}");
@@ -39,7 +60,7 @@ namespace DebitoCredito.Infraestructure.Test.Integracion
             Assert.NotNull(stringResult);
             Response<List<EstadoDeCuentaDto>> cuentaDto = JsonConvert.DeserializeObject<Response<List<EstadoDeCuentaDto>>>(stringResult);
             Assert.NotNull(cuentaDto.Mensaje);
-            Assert.Contains(cuentaDto.Mensaje.First().Cliente, "Marianela Montalvo");
+            Assert.Contains(cuentaDto.Mensaje.First().Cliente, "Juan Osorio");
         }
     }
 }
