@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/Cliente/Consultar/?Identificacion=1725394786",
+					"raw": "http://localhost:5000/api/Cliente/Consultar/?Identificacion=1724389746",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -26,7 +26,7 @@
 					"query": [
 						{
 							"key": "Identificacion",
-							"value": "1725394786"
+							"value": "1724389746"
 						}
 					]
 				}
@@ -74,7 +74,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/Cliente/Eliminar/?identificacion=1725394786",
+					"raw": "http://localhost:5000/api/Cliente/Eliminar/?identificacion=1725389746",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +89,7 @@
 					"query": [
 						{
 							"key": "identificacion",
-							"value": "1725394786"
+							"value": "1725389746"
 						}
 					]
 				}
@@ -103,7 +103,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"numeroCuenta\": 4787588,\r\n  \"tipo\": \"Credito\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"saldoInicial\": 2000,\r\n  \"montoDiario\": 100\r\n}",
+					"raw": "{\r\n  \"numeroCuenta\": 496825,\r\n  \"tipo\": \"Corriente\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"saldoInicial\": 100,\r\n  \"montoDiario\": 1000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -283,7 +283,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nombre\": \"Jose Lema\",\r\n  \"genero\": \"Masculino\",\r\n  \"edad\": \"29\",\r\n  \"direccion\": \"San Juan\",\r\n  \"identificacion\": \"1725394786\",\r\n  \"telefono\": \"3030668\",\r\n  \"contrasena\": \"123456\"\r\n}",
+					"raw": "{\r\n  \"nombre\": \"Marianela Montalvo\",\r\n  \"genero\": \"Femenino\",\r\n  \"edad\": \"29\",\r\n  \"direccion\": \"13 junio y Equinoccial\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"telefono\": \"097548965\",\r\n  \"contrasena\": \"5678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -313,7 +313,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"numeroCuenta\": 4787588,\r\n  \"tipo\": \"Credito\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"saldoInicial\": 1200,\r\n  \"montoDiario\": 1000\r\n}",
+					"raw": "{\r\n  \"numeroCuenta\": 4787588,\r\n  \"tipo\": \"Ahorro\",\r\n  \"identificacion\": \"1724389746\",\r\n  \"saldoInicial\": 1200,\r\n  \"montoDiario\": 1000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
