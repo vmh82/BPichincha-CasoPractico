@@ -32,7 +32,7 @@ namespace DebitoCredito.Infraestructure.Test.Integracion
         public async Task VerificarEndPointDebito()
         {
             MovimientosDto movimientos = new MovimientosDto();
-            movimientos.NumeroCuenta = 225487;
+            movimientos.NumeroCuenta = 495878;
             movimientos.Monto = 150;
             string jsonCliente = JsonConvert.SerializeObject(movimientos);
             StringContent httpContent = new StringContent(jsonCliente, Encoding.UTF8, "application/json");
